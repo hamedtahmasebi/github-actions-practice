@@ -21,8 +21,11 @@ app.get("/endpoint3", (req, res) => {
 });
 
 // Listen on the port
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
 
-module.exports = app;
+module.exports = {
+    app,
+    server,
+};

@@ -2,7 +2,7 @@
 const supertest = require("supertest");
 
 // Require the app module
-const app = require("../index.js");
+const { app, server } = require("../index.js");
 
 // Create a supertest agent
 const request = supertest(app);
@@ -40,5 +40,8 @@ describe("Endpoints", () => {
             .expect("Content-Type", /text/);
         // Expect the response text to be "This is endpoint 3"
         expect(response.text).toBe("This is endpoint 3");
+    });
+    afterAll((done) => {
+        server.close(done);
     });
 });
