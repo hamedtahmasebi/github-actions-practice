@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 
 // Create an express app
 const app = express();
@@ -8,15 +8,15 @@ const port = 3000;
 
 // Define three endpoints with get requests and dummy text responses
 
-app.get("/endpoint1", (req, res) => {
+app.get("/endpoint1", (_, res) => {
     res.send("This is endpoint 1");
 });
 
-app.get("/endpoint2", (req, res) => {
+app.get("/endpoint2", (_, res) => {
     res.send("This is endpoint 2");
 });
 
-app.get("/endpoint3", (req, res) => {
+app.get("/endpoint3", (_, res) => {
     res.send("This is endpoint 3");
 });
 
