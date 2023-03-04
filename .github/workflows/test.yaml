@@ -19,4 +19,4 @@ jobs:
             - name: Install dependencies
               run: npm i
             - name: Run tests
-              run: npm test --detectOpenHandles
+              run: npm test -- --watchAll=false
